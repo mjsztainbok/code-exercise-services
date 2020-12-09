@@ -1,11 +1,68 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "ProductInformationIngestion/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "ProductIngestionProcessors": "1.0.0",
+          "ProductIngestionTypes": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ProductInformationIngestion.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ProductInformationIngestion.dll": {}
+        }
+      },
+      "ProductIngestionProcessors/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "ProductIngestionTypes": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ProductIngestionProcessors.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ProductIngestionProcessors.dll": {}
+        }
+      },
+      "ProductIngestionTypes/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/ProductIngestionTypes.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ProductIngestionTypes.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "ProductInformationIngestion/1.0.0": {
+      "type": "project",
+      "path": "../ProductInformationIngestion/ProductInformationIngestion.csproj",
+      "msbuildProject": "../ProductInformationIngestion/ProductInformationIngestion.csproj"
+    },
+    "ProductIngestionProcessors/1.0.0": {
+      "type": "project",
+      "path": "../ProductInjectionsProcessors/ProductIngestionProcessors.csproj",
+      "msbuildProject": "../ProductInjectionsProcessors/ProductIngestionProcessors.csproj"
+    },
+    "ProductIngestionTypes/1.0.0": {
+      "type": "project",
+      "path": "../ProductInjectionTypes/ProductIngestionTypes.csproj",
+      "msbuildProject": "../ProductInjectionTypes/ProductIngestionTypes.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "ProductInformationIngestion >= 1.0.0",
+      "ProductIngestionProcessors >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\mjszt\\.nuget\\packages\\": {},
@@ -38,7 +95,14 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInformationIngestion\\ProductInformationIngestion.csproj": {
+              "projectPath": "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInformationIngestion\\ProductInformationIngestion.csproj"
+            },
+            "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInjectionsProcessors\\ProductIngestionProcessors.csproj": {
+              "projectPath": "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInjectionsProcessors\\ProductIngestionProcessors.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -65,7 +129,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

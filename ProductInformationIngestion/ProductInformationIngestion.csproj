@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>ProductIngestion</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ProductInformationIngestion\ProductInformationIngestion.csproj" />
     <ProjectReference Include="..\ProductInjectionsProcessors\ProductIngestionProcessors.csproj" />
+    <ProjectReference Include="..\ProductInjectionTypes\ProductIngestionTypes.csproj" />
   </ItemGroup>
 
 </Project>

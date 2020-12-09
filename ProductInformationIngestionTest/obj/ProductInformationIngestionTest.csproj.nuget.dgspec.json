@@ -31,6 +31,198 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInformationIngestion\\ProductInformationIngestion.csproj": {
+                "projectPath": "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInformationIngestion\\ProductInformationIngestion.csproj"
+              },
+              "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInjectionsProcessors\\ProductIngestionProcessors.csproj": {
+                "projectPath": "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInjectionsProcessors\\ProductIngestionProcessors.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInformationIngestion\\ProductInformationIngestion.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInformationIngestion\\ProductInformationIngestion.csproj",
+        "projectName": "ProductInformationIngestion",
+        "projectPath": "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInformationIngestion\\ProductInformationIngestion.csproj",
+        "packagesPath": "C:\\Users\\mjszt\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInformationIngestion\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mjszt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInjectionsProcessors\\ProductIngestionProcessors.csproj": {
+                "projectPath": "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInjectionsProcessors\\ProductIngestionProcessors.csproj"
+              },
+              "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInjectionTypes\\ProductIngestionTypes.csproj": {
+                "projectPath": "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInjectionTypes\\ProductIngestionTypes.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInjectionsProcessors\\ProductIngestionProcessors.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInjectionsProcessors\\ProductIngestionProcessors.csproj",
+        "projectName": "ProductIngestionProcessors",
+        "projectPath": "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInjectionsProcessors\\ProductIngestionProcessors.csproj",
+        "packagesPath": "C:\\Users\\mjszt\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInjectionsProcessors\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mjszt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInjectionTypes\\ProductIngestionTypes.csproj": {
+                "projectPath": "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInjectionTypes\\ProductIngestionTypes.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInjectionTypes\\ProductIngestionTypes.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInjectionTypes\\ProductIngestionTypes.csproj",
+        "projectName": "ProductIngestionTypes",
+        "projectPath": "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInjectionTypes\\ProductIngestionTypes.csproj",
+        "packagesPath": "C:\\Users\\mjszt\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInjectionTypes\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mjszt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {}
           }
         },
@@ -58,7 +250,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

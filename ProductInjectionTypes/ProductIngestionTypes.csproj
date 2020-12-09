@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <RootNamespace>ProductIngestion.Types</RootNamespace>
+    <AssemblyName>ProductIngestionTypes</AssemblyName>
+  </PropertyGroup>
+
+</Project>

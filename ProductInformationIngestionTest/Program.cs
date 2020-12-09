@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ProductIngestion;
+using ProductIngestion.Processors;
+
+using System;
 
 namespace ProductInformationIngestionTest
 {
@@ -6,7 +9,9 @@ namespace ProductInformationIngestionTest
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var pdi = new ProductDataIngestor();
+            pdi.IngestProductData(@"C:\Users\mjszt\source\repos\mjsztainbok\code-exercise-services\input-sample.txt");
         }
     }
 }
+ 

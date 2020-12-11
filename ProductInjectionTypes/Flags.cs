@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Immutable;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProductIngestion.Types
+﻿namespace ProductIngestion.Types
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.Immutable;
+    using System.Diagnostics;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     [DebuggerDisplay("value = {DebuggerDisplay,nq}")]
     public class Flags : IFieldType<ImmutableArray<bool>>
     {
@@ -22,15 +22,15 @@ namespace ProductIngestion.Types
             this.flags = flags;
         }
 
-        public bool this[int index] => flags[index - 1];
-
-        public bool this[Flag flag] => flags[(int)flag - 1];
-
-        public ImmutableArray<bool> Value => flags;
+        public ImmutableArray<bool> Value => this.flags;
 
         private string DebuggerDisplay
         {
-            get => string.Join("", flags.Select(b => b ? 'Y' : 'N').ToArray());
+            get => string.Join(string.Empty, this.flags.Select(b => b ? 'Y' : 'N').ToArray());
         }
+
+        public bool this[int index] => this.flags[index - 1];
+
+        public bool this[Flag flag] => this.flags[(int)flag - 1];
     }
 }

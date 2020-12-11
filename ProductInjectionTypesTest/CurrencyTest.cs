@@ -1,11 +1,43 @@
-﻿using NUnit.Framework;
-
-using ProductIngestion.Types;
-
-namespace ProductIngestion.Types.Test
+﻿namespace ProductIngestion.Types.Test
 {
+    using NUnit.Framework;
+
+    using ProductIngestion.Types;
+
     public class CurrencyTest
     {
+        private static readonly object[] ConstructorTestCases =
+        {
+            new object[] { 0m, 0m },
+            new object[] { 5m, 5m },
+            new object[] { 1.234567m, 1.234567m },
+            new object[] { 02.345m, 2.345m },
+            new object[] { -2m, -2m },
+            new object[] { -3.2456m, -3.2456m },
+        };
+
+        private static readonly object[] RoundingTestCases =
+        {
+            new object[] { 0.1m, 0.1m },
+            new object[] { 0.12m, 0.12m },
+            new object[] { 0.123m, 0.123m },
+            new object[] { 0.1234m, 0.1234m },
+            new object[] { 0.12341m, 0.1234m },
+            new object[] { 0.123449999999m, 0.1234m },
+            new object[] { 0.12345m, 0.1234m },
+            new object[] { 0.123451m, 0.1235m },
+            new object[] { 0.123478m, 0.1235m },
+            new object[] { -0.1m, -0.1m },
+            new object[] { -0.12m, -0.12m },
+            new object[] { -0.123m, -0.123m },
+            new object[] { -0.1234m, -0.1234m },
+            new object[] { -0.12341m, -0.1234m },
+            new object[] { -0.123449999999m, -0.1234m },
+            new object[] { -0.12345m, -0.1235m },
+            new object[] { -0.123451m, -0.1235m },
+            new object[] { -0.123478m, -0.1235m },
+        };
+
         [Test]
         [TestCaseSource(nameof(ConstructorTestCases))]
         public void TestConstructor(decimal value, decimal expectedValue)
@@ -13,16 +45,6 @@ namespace ProductIngestion.Types.Test
             var sut = new Currency(value);
             Assert.That(sut.Value, Is.EqualTo(expectedValue));
         }
-
-        private static readonly object[] ConstructorTestCases =
-        {
-            new object[] {0m, 0m},
-            new object[] {5m, 5m},
-            new object[] {1.234567m, 1.234567m},
-            new object[] {02.345m, 2.345m},
-            new object[] {-2m, -2m},
-            new object[] {-3.2456m, -3.2456m},
-        };
 
         [Test]
         public void TestConversionOperator()
@@ -39,27 +61,5 @@ namespace ProductIngestion.Types.Test
             decimal roundedValue = CurrencyUtils.RoundHalfDownTo4Places(value);
             Assert.That(roundedValue, Is.EqualTo(expectedValue));
         }
-
-        private static readonly object[] RoundingTestCases =
-        {
-            new object[] {0.1m, 0.1m},
-            new object[] {0.12m, 0.12m},
-            new object[] {0.123m, 0.123m},
-            new object[] {0.1234m, 0.1234m},
-            new object[] {0.12341m, 0.1234m},
-            new object[] {0.123449999999m, 0.1234m},
-            new object[] {0.12345m, 0.1234m},
-            new object[] {0.123451m, 0.1235m},
-            new object[] {0.123478m, 0.1235m},
-            new object[] {-0.1m, -0.1m},
-            new object[] {-0.12m, -0.12m},
-            new object[] {-0.123m, -0.123m},
-            new object[] {-0.1234m, -0.1234m},
-            new object[] {-0.12341m, -0.1234m},
-            new object[] {-0.123449999999m, -0.1234m},
-            new object[] {-0.12345m, -0.1235m},
-            new object[] {-0.123451m, -0.1235m},
-            new object[] {-0.123478m, -0.1235m},
-        };
     }
 }

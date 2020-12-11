@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace ProductIngestion
+﻿namespace ProductIngestion
 {
+    using System;
+
     public class FieldDescription
     {
         public FieldDescription(int start, int end, string name, Type fieldType)
@@ -15,7 +15,7 @@ namespace ProductIngestion
 
         public int Start { get; }
 
-        public int End { get;  }
+        public int End { get; }
 
         public string Name { get; }
 
@@ -23,7 +23,7 @@ namespace ProductIngestion
 
         public int Length
         {
-            get => End - Start + 1;
+            get => this.End - this.Start + 1;
         }
     }
 }

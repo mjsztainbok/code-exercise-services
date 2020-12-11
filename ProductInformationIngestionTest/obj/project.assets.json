@@ -2,6 +2,30 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "Spectre.Console/0.33.0": {
+        "type": "package",
+        "dependencies": {
+          "Wcwidth": "0.2.0"
+        },
+        "compile": {
+          "lib/net5.0/Spectre.Console.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Spectre.Console.dll": {}
+        }
+      },
+      "StyleCop.Analyzers/1.1.118": {
+        "type": "package"
+      },
+      "Wcwidth/0.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Wcwidth.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Wcwidth.dll": {}
+        }
+      },
       "ProductInformationIngestion/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -42,6 +66,60 @@
     }
   },
   "libraries": {
+    "Spectre.Console/0.33.0": {
+      "sha512": "dGHOdW9S0ZI3ltieuDkIuq0vHUZgGjYxhZxvm85/Z6rO1EvrBF4KX7k2j7X+7LVL/OLmCgYEJAdtWzcOqVtdFw==",
+      "type": "package",
+      "path": "spectre.console/0.33.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net5.0/Spectre.Console.dll",
+        "lib/net5.0/Spectre.Console.xml",
+        "lib/netstandard2.0/Spectre.Console.dll",
+        "lib/netstandard2.0/Spectre.Console.xml",
+        "small-logo.png",
+        "spectre.console.0.33.0.nupkg.sha512",
+        "spectre.console.nuspec"
+      ]
+    },
+    "StyleCop.Analyzers/1.1.118": {
+      "sha512": "Onx6ovGSqXSK07n/0eM3ZusiNdB6cIlJdabQhWGgJp3Vooy9AaLS/tigeybOJAobqbtggTamoWndz72JscZBvw==",
+      "type": "package",
+      "path": "stylecop.analyzers/1.1.118",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "THIRD-PARTY-NOTICES.txt",
+        "analyzers/dotnet/cs/StyleCop.Analyzers.CodeFixes.dll",
+        "analyzers/dotnet/cs/StyleCop.Analyzers.dll",
+        "analyzers/dotnet/cs/de-DE/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/en-GB/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/es-MX/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/fr-FR/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/pl-PL/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/pt-BR/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/ru-RU/StyleCop.Analyzers.resources.dll",
+        "stylecop.analyzers.1.1.118.nupkg.sha512",
+        "stylecop.analyzers.nuspec",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "Wcwidth/0.2.0": {
+      "sha512": "H7no2W0vuLJTvSPanlrijtG3UdJNVoeWBOp2a5dJFVa2tqSQuP5GfbJw1xAtPG9agRW310nFTUUsyPz5tuVIxw==",
+      "type": "package",
+      "path": "wcwidth/0.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Wcwidth.dll",
+        "lib/netstandard2.0/Wcwidth.xml",
+        "wcwidth.0.2.0.nupkg.sha512",
+        "wcwidth.nuspec"
+      ]
+    },
     "ProductInformationIngestion/1.0.0": {
       "type": "project",
       "path": "../ProductInformationIngestion/ProductInformationIngestion.csproj",
@@ -61,7 +139,9 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "ProductInformationIngestion >= 1.0.0",
-      "ProductIngestionProcessors >= 1.0.0"
+      "ProductIngestionProcessors >= 1.0.0",
+      "Spectre.Console >= 0.33.0",
+      "StyleCop.Analyzers >= 1.1.118"
     ]
   },
   "packageFolders": {
@@ -114,6 +194,18 @@
     "frameworks": {
       "net5.0": {
         "targetAlias": "net5.0",
+        "dependencies": {
+          "Spectre.Console": {
+            "target": "Package",
+            "version": "[0.33.0, )"
+          },
+          "StyleCop.Analyzers": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[1.1.118, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

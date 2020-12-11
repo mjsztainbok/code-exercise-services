@@ -1,9 +1,9 @@
-﻿using NUnit.Framework;
-
-using ProductIngestion.Types;
-
-namespace ProductIngestion.Types.Test
+﻿namespace ProductIngestion.Types.Test
 {
+    using NUnit.Framework;
+
+    using ProductIngestion.Types;
+
     public class NumberTest
     {
         [Test]
@@ -20,7 +20,7 @@ namespace ProductIngestion.Types.Test
         public void TestConversionOperator()
         {
             var sut = new Number(345123789);
-            int intValue = sut;
+            int? intValue = sut;
             Assert.That(intValue, Is.EqualTo(sut.Value));
         }
     }

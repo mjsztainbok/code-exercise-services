@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "DnFSWkvCh+wQNqoMBT+pmfCRM1NS1WRuLga98ou2aIzpePmR65/XKMwdOi7raJH9UPvXNa6EvhpDNMgLRzLuBg==",
+  "dgSpecHash": "7y2XdutpuBmNu2R60acGowfADAjwK6W6ykBH61jonLY9+CEr9x0pDOy3/CoOPogD4VDDkiQ+TN/9ApOE4GR5yw==",
   "success": true,
   "projectFilePath": "C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\ProductInformationIngestionTest\\ProductInformationIngestionTest.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\mjszt\\.nuget\\packages\\spectre.console\\0.33.0\\spectre.console.0.33.0.nupkg.sha512",
+    "C:\\Users\\mjszt\\.nuget\\packages\\stylecop.analyzers\\1.1.118\\stylecop.analyzers.1.1.118.nupkg.sha512",
+    "C:\\Users\\mjszt\\.nuget\\packages\\wcwidth\\0.2.0\\wcwidth.0.2.0.nupkg.sha512"
+  ],
   "logs": []
 }

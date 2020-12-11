@@ -1,15 +1,15 @@
-using NUnit.Framework;
-
-using ProductIngestion.Types;
-
-using System;
-using System.Collections.Immutable;
-
 namespace ProductIngestion.Types.Test
 {
+    using System;
+    using System.Collections.Immutable;
+
+    using NUnit.Framework;
+
+    using ProductIngestion.Types;
+
     public class FlagsTest
     {
-        private readonly bool[] TestData = { false, true, false, true, false, false, true, true, false };
+        private static readonly bool[] TestData = { false, true, false, true, false, false, true, true, false };
 
         [Test]
         public void TestConstructor()
@@ -35,7 +35,7 @@ namespace ProductIngestion.Types.Test
         public void TestFlagIndexer()
         {
             var sut = new Flags(TestData.ToImmutableArray());
-            Flag[] values = (Flag[]) Enum.GetValues(typeof(Flag));
+            Flag[] values = (Flag[])Enum.GetValues(typeof(Flag));
             foreach (Flag value in values)
             {
                 Assert.That(sut[value], Is.EqualTo(TestData[(int)value - 1]), () => $"Flag {value}");

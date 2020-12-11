@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ProductInformationIngestionTest": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\Users\\mjszt\\source\\repos\\mjsztainbok\\code-exercise-services\\input-sample.txt\""
+    }
+  }
+}

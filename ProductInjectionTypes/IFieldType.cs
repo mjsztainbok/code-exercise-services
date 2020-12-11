@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace ProductIngestion.Types
+﻿namespace ProductIngestion.Types
 {
+    using System;
+
     public interface IFieldType
     {
     }

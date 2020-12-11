@@ -1,10 +1,9 @@
-﻿
-using NUnit.Framework;
-
-using String = ProductIngestion.Types.String;
-
-namespace ProductIngestion.Types.Test
+﻿namespace ProductIngestion.Types.Test
 {
+    using NUnit.Framework;
+
+    using String = ProductIngestion.Types.String;
+
     public class StringTest
     {
         [Test]
@@ -19,7 +18,8 @@ namespace ProductIngestion.Types.Test
         {
             var sut = new String(value);
             Assert.That(sut, value != null ?
-                Has.Property("Value").EqualTo(value.Trim()) :
+                Has.Property("Value")
+                   .EqualTo(value.Trim()) :
                 Has.Property("Value").Null);
         }
 

@@ -1,13 +1,14 @@
-﻿using ProductIngestion.Types;
-
-using System;
-
-namespace ProductIngestion.Processors
+﻿namespace ProductIngestion.Processors
 {
-    public interface IProcessor<out T> where T : IFieldType
-    {
-        T ProcessString(string data);
+    using System;
 
+    using ProductIngestion.Types;
+
+    public interface IProcessor<out T>
+        where T : IFieldType
+    {
         Type OutputType => typeof(T);
+
+        T ProcessString(string data);
     }
 }

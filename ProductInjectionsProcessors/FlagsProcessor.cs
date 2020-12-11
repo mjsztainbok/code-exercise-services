@@ -1,9 +1,9 @@
-﻿using ProductIngestion.Types;
-
-using System.Collections.Immutable;
-
-namespace ProductIngestion.Processors
+﻿namespace ProductIngestion.Processors
 {
+    using System.Collections.Immutable;
+
+    using ProductIngestion.Types;
+
     public class FlagsProcessor : IProcessor<Flags>
     {
         public Flags ProcessString(string data)
@@ -17,7 +17,7 @@ namespace ProductIngestion.Processors
             foreach (char c in data)
             {
                 // Only Y and N are acceptable characters for a flag
-                if (c is not ('Y' or 'N'))
+                if (c is not('Y' or 'N'))
                 {
                     throw new InvalidDataException("The flags string contains invalid characters");
                 }

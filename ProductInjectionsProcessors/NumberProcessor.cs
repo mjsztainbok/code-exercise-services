@@ -1,13 +1,13 @@
-﻿using ProductIngestion.Types;
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProductIngestion.Processors
+﻿namespace ProductIngestion.Processors
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    using ProductIngestion.Types;
+
     public class NumberProcessor : IProcessor<Number>
     {
         public Number ProcessString(string data)

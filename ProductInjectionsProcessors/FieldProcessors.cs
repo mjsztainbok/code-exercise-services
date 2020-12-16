@@ -20,7 +20,7 @@ namespace ProductIngestion.Processors
         /// <summary>Initializes a new instance of the <see cref="FieldProcessors" /> class by automatically finding all implemented processors.</summary>
         public FieldProcessors()
         {
-            // This is candidate for dependency injection
+            // This is a candidate for dependency injection
             List<IProcessor<IFieldType>> processors = Assembly.GetExecutingAssembly().DefinedTypes
                 .Where(t => t.GetInterfaces().Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IProcessor<>)))
                 .Select(t => (IProcessor<IFieldType>)Activator.CreateInstance(t))

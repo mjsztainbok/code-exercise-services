@@ -11,7 +11,7 @@ namespace ProductIngestion.Processors
 
     /// <summary>A processor for field data.</summary>
     /// <typeparam name="T">The type of the field data.</typeparam>
-    public interface IProcessor<T>
+    public interface IProcessor<out T>
         where T : IFieldType
     {
         /// <summary>Gets the type of the output from the processor.</summary>

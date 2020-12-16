@@ -1,41 +1,59 @@
-﻿namespace ProductIngestion
+﻿// <copyright file="ProductDataIngestor.cs" company="Mark Sztainbok">
+// Copyright (c) Mark Sztainbok. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+// </copyright>
+
+namespace ProductIngestion
 {
-    using System;
     using System.Collections.Generic;
     using System.Collections.Immutable;
     using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     using ProductIngestion.Processors;
     using ProductIngestion.Types;
 
     using InvalidDataException = ProductIngestion.Processors.InvalidDataException;
 
+    /// <summary>
+    /// Class to ingest the product data from a specified file or stream.
+    /// </summary>
     public class ProductDataIngestor
     {
         private InputDataFormat inputDataFormat;
         private FieldProcessors fieldProcessors;
 
+        /// <summary>Initializes a new instance of the <see cref="ProductDataIngestor" /> class.</summary>
         public ProductDataIngestor()
         {
             this.inputDataFormat = new InputDataFormat();
             this.fieldProcessors = new FieldProcessors();
         }
 
+        /// <summary>Gets the input data format.</summary>
+        /// <value>The input data format.</value>
         public InputDataFormat InputDataFormat
         {
             init => this.inputDataFormat = value;
             get => this.inputDataFormat;
         }
 
+        /// <summary>
+        /// Gets the field processors.
+        /// </summary>
+        /// <value>
+        /// The field processors.
+        /// </value>
         public FieldProcessors FieldProcessors
         {
             init => this.fieldProcessors = value;
             get => this.fieldProcessors;
         }
 
+        /// <summary>
+        /// Ingests the product data from a file.
+        /// </summary>
+        /// <param name="path">The path to a file containing the product data.</param>
+        /// <returns>A list of product records for the product data.</returns>
         public List<ProductRecord> IngestProductData(string path)
         {
             using var fileStream = File.OpenRead(path);
@@ -43,6 +61,11 @@
             return this.IngestProductData(fileStream);
         }
 
+        /// <summary>
+        /// Ingests the product data from a stream.
+        /// </summary>
+        /// <param name="stream">The stream containing the product data.</param>
+        /// <returns>A list of product records for the product data.</returns>
         public List<ProductRecord> IngestProductData(Stream stream)
         {
             using var bufferedStream = new BufferedStream(stream);

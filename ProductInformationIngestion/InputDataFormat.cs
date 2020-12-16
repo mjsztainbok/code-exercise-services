@@ -1,16 +1,18 @@
-﻿namespace ProductIngestion
+﻿// <copyright file="InputDataFormat.cs" company="Mark Sztainbok">
+// Copyright (c) Mark Sztainbok. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+// </copyright>
+
+namespace ProductIngestion
 {
-    using System;
     using System.Collections.Generic;
     using System.Collections.Immutable;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     using ProductIngestion.Types;
 
     using String = ProductIngestion.Types.String;
 
+    /// <summary>The description of the input data format.</summary>
     public class InputDataFormat
     {
         // This could potentially be read from an initialization file so that it could be updated without required code changes
@@ -30,19 +32,26 @@
 
         private ImmutableList<FieldDescription> fieldDescriptions;
 
+        /// <summary>Initializes a new instance of the <see cref="InputDataFormat" /> class using the default input data format.</summary>
         public InputDataFormat()
             : this(DefaultDataFormat)
         {
         }
 
+        /// <summary>Initializes a new instance of the <see cref="InputDataFormat" /> class using the specified field descriptions.</summary>
+        /// <param name="fieldDescriptions">The field descriptions.</param>
         public InputDataFormat(List<FieldDescription> fieldDescriptions)
         {
-            this.ValidateFieldDescriptions(fieldDescriptions);
+            // TODO: The field descriptions should be validated here to ensure they don't overlap or have duplicate names
             this.fieldDescriptions = fieldDescriptions.ToImmutableList();
         }
 
+        /// <summary>Gets the field descriptions.</summary>
+        /// <value>The field descriptions.</value>
         public ImmutableList<FieldDescription> FieldDescriptions => this.fieldDescriptions;
 
+        /// <summary>Creates an input data object prepopulate with the fields from the input data.</summary>
+        /// <returns>An input data object.</returns>
         internal InputData CreateInputData()
         {
             var inputData = new InputData();
@@ -54,11 +63,6 @@
             }
 
             return inputData;
-        }
-
-        private void ValidateFieldDescriptions(List<FieldDescription> fieldDescriptions)
-        {
-            // TODO: Add validation code here
         }
     }
 }

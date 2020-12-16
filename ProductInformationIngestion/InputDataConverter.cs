@@ -1,14 +1,21 @@
-﻿namespace ProductIngestion
+﻿// <copyright file="InputDataConverter.cs" company="Mark Sztainbok">
+// Copyright (c) Mark Sztainbok. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+// </copyright>
+
+namespace ProductIngestion
 {
     using ProductIngestion.Types;
 
-    using String = ProductIngestion.Types.String;
-
+    /// <summary>Utility class to convert the input data to product records.</summary>
     internal class InputDataConverter
     {
         // This value should come from an initalization file so that it can be changed easily without code changes
         private const decimal TaxRate = 7.775m;
 
+        /// <summary>Converts an input data to a product record.</summary>
+        /// <param name="inputData">The input data.</param>
+        /// <returns>A product record corresponding to the input data.</returns>
         public static ProductRecord ConvertInputDataToProductRecord(InputData inputData)
         {
             // Process the regular prices

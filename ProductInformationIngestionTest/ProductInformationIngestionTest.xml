@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProductInformationIngestionTest</name>
+    </assembly>
+    <members>
+        <member name="T:ProductInformationIngestionTest.Program">
+            <summary>The main program class.</summary>
+        </member>
+    </members>
+</doc>

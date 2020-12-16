@@ -17,10 +17,7 @@
         public void TestConstructor(string value)
         {
             var sut = new String(value);
-            Assert.That(sut, value != null ?
-                Has.Property("Value")
-                   .EqualTo(value.Trim()) :
-                Has.Property("Value").Null);
+            Assert.That(sut, value != null ? Has.Property("Value").EqualTo(value.Trim()) : Has.Property("Value").Null);
         }
 
         [Test]

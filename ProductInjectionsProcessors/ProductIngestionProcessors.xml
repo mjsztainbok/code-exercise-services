@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProductIngestionProcessors</name>
+    </assembly>
+    <members>
+        <member name="T:ProductIngestion.Processors.CurrencyProcessor">
+            <summary>
+            A processor for currency field data.
+            </summary>
+            <seealso cref="T:ProductIngestion.Processors.IProcessor`1" />
+        </member>
+        <member name="M:ProductIngestion.Processors.CurrencyProcessor.ProcessString(System.String)">
+            <summary>Processes the string data to the output field type.</summary>
+            <param name="data">The data.</param>
+            <returns>An object representing the parsed string data.</returns>
+            <exception cref="T:ProductIngestion.Processors.InvalidDataException">The specified data is invalid.</exception>
+        </member>
+        <member name="T:ProductIngestion.Processors.FieldProcessors">
+            <summary>A collection of field processors.</summary>
+        </member>
+        <member name="M:ProductIngestion.Processors.FieldProcessors.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:ProductIngestion.Processors.FieldProcessors" /> class by automatically finding all implemented processors.</summary>
+        </member>
+        <member name="M:ProductIngestion.Processors.FieldProcessors.#ctor(System.Collections.Generic.List{ProductIngestion.Processors.IProcessor{ProductIngestion.Types.IFieldType}})">
+            <summary>Initializes a new instance of the <see cref="T:ProductIngestion.Processors.FieldProcessors" /> class using the specified field processors.</summary>
+            <param name="processors">The processors.</param>
+        </member>
+        <member name="P:ProductIngestion.Processors.FieldProcessors.Item(System.Type)">
+            <summary>Gets the processor for the specified field type.</summary>
+            <param name="fieldType">Type of the field.</param>
+            <value>A field processor.</value>
+            <returns>The field processor for the specified field type.</returns>
+        </member>
+        <member name="T:ProductIngestion.Processors.FlagsProcessor">
+            <summary>
+            A processor for flag field data.
+            </summary>
+            <seealso cref="T:ProductIngestion.Processors.IProcessor`1" />
+        </member>
+        <member name="M:ProductIngestion.Processors.FlagsProcessor.ProcessString(System.String)">
+            <summary>Processes the string data to the output field type.</summary>
+            <param name="data">The data.</param>
+            <returns>An object representing the parsed string data.</returns>
+            <exception cref="T:ProductIngestion.Processors.InvalidDataException">The specified data is invalid.</exception>
+        </member>
+        <member name="T:ProductIngestion.Processors.InvalidDataException">
+            <summary>An exception which is thrown when the input data is invalid.</summary>
+        </member>
+        <member name="M:ProductIngestion.Processors.InvalidDataException.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:ProductIngestion.Processors.InvalidDataException" /> class.</summary>
+        </member>
+        <member name="M:ProductIngestion.Processors.InvalidDataException.#ctor(System.String)">
+            <summary>Initializes a new instance of the <see cref="T:ProductIngestion.Processors.InvalidDataException" /> class.</summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:ProductIngestion.Processors.InvalidDataException.#ctor(System.String,System.Exception)">
+            <summary>Initializes a new instance of the <see cref="T:ProductIngestion.Processors.InvalidDataException" /> class.</summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">
+            The exception that is the cause of the current exception, or a null reference (<span class="keyword"><span class="languageSpecificText"><span class="cs">null</span><span class="vb">Nothing</span><span class="cpp">nullptr</span></span></span><span class="nu">a null reference (<span class="keyword">Nothing</span> in Visual Basic)</span> in Visual Basic) if no inner exception is specified.
+            </param>
+        </member>
+        <member name="M:ProductIngestion.Processors.InvalidDataException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Initializes a new instance of the <see cref="T:ProductIngestion.Processors.InvalidDataException" /> class.</summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo">SerializationInfo</see> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext">StreamingContext</see> that contains contextual information about the source or destination.</param>
+        </member>
+        <member name="T:ProductIngestion.Processors.IProcessor`1">
+            <summary>A processor for field data.</summary>
+            <typeparam name="T">The type of the field data.</typeparam>
+        </member>
+        <member name="P:ProductIngestion.Processors.IProcessor`1.OutputType">
+            <summary>Gets the type of the output from the processor.</summary>
+            <value>The type of the output.</value>
+        </member>
+        <member name="M:ProductIngestion.Processors.IProcessor`1.ProcessString(System.String)">
+            <summary>Processes the string data to the output field type.</summary>
+            <param name="data">The data.</param>
+            <returns>An object representing the parsed string data.</returns>
+            <exception cref="T:ProductIngestion.Processors.InvalidDataException">The specified data is invalid.</exception>
+        </member>
+        <member name="T:ProductIngestion.Processors.NumberProcessor">
+            <summary>
+            A processor for number field data.
+            </summary>
+            <seealso cref="T:ProductIngestion.Processors.IProcessor`1" />
+        </member>
+        <member name="M:ProductIngestion.Processors.NumberProcessor.ProcessString(System.String)">
+            <summary>Processes the string data to the output field type.</summary>
+            <param name="data">The data.</param>
+            <returns>An object representing the parsed string data.</returns>
+            <exception cref="T:ProductIngestion.Processors.InvalidDataException">The specified data is invalid.</exception>
+        </member>
+        <member name="T:ProductIngestion.Processors.StringProcessor">
+            <summary>
+            A processor for string field data.
+            </summary>
+            <seealso cref="T:ProductIngestion.Processors.IProcessor`1" />
+        </member>
+        <member name="M:ProductIngestion.Processors.StringProcessor.ProcessString(System.String)">
+            <summary>Processes the string data to the output field type.</summary>
+            <param name="data">The data.</param>
+            <returns>An object representing the parsed string data.</returns>
+            <exception cref="T:ProductIngestion.Processors.InvalidDataException">The specified data is invalid.</exception>
+        </member>
+    </members>
+</doc>

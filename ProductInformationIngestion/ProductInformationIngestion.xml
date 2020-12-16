@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProductInformationIngestion</name>
+    </assembly>
+    <members>
+        <member name="T:ProductIngestion.FieldDescription">
+            <summary>
+              <para>A field description.</para>
+            </summary>
+        </member>
+        <member name="M:ProductIngestion.FieldDescription.#ctor(System.Int32,System.Int32,System.String,System.Type)">
+            <summary>Initializes a new instance of the <see cref="T:ProductIngestion.FieldDescription" /> class.</summary>
+            <param name="start">Start index of the field (1 based).</param>
+            <param name="end">End index of the field (1 based).</param>
+            <param name="name">Name of the field.</param>
+            <param name="fieldType">Type of the field.</param>
+        </member>
+        <member name="P:ProductIngestion.FieldDescription.Start">
+            <summary>Gets the start index of the field (0 based).</summary>
+            <value>The start index.</value>
+            <remarks>This will be 1 less than the value passed into the constructor.</remarks>
+        </member>
+        <member name="P:ProductIngestion.FieldDescription.End">
+            <summary>Gets the end index of the field (0 based).</summary>
+            <value>The end index.</value>
+            <remarks>This will be 1 less than the value passed into the constructor.</remarks>
+        </member>
+        <member name="P:ProductIngestion.FieldDescription.Name">
+            <summary>Gets the name of the field.</summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:ProductIngestion.FieldDescription.FieldType">
+            <summary>Gets the type of the field.</summary>
+            <value>The type of the field.</value>
+        </member>
+        <member name="P:ProductIngestion.FieldDescription.Length">
+            <summary>Gets the length of the field.</summary>
+            <value>The length.</value>
+        </member>
+        <member name="T:ProductIngestion.FieldNames">
+            <summary>Field name constants.</summary>
+        </member>
+        <member name="F:ProductIngestion.FieldNames.ProductId">
+            <summary>The product identifier.</summary>
+        </member>
+        <member name="F:ProductIngestion.FieldNames.ProductDescription">
+            <summary>The product description.</summary>
+        </member>
+        <member name="F:ProductIngestion.FieldNames.RegularEachPrice">
+            <summary>The regular each price.</summary>
+        </member>
+        <member name="F:ProductIngestion.FieldNames.SaleEachPrice">
+            <summary>The sale each price.</summary>
+        </member>
+        <member name="F:ProductIngestion.FieldNames.RegularSplitPrice">
+            <summary>The regular split price.</summary>
+        </member>
+        <member name="F:ProductIngestion.FieldNames.SaleSplitPrice">
+            <summary>The sale split price.</summary>
+        </member>
+        <member name="F:ProductIngestion.FieldNames.RegularSplitQuantity">
+            <summary>The regular split quantity.</summary>
+        </member>
+        <member name="F:ProductIngestion.FieldNames.SaleSplitQuantity">
+            <summary>The sale split quantity.</summary>
+        </member>
+        <member name="F:ProductIngestion.FieldNames.Flags">
+            <summary>The flags.</summary>
+        </member>
+        <member name="F:ProductIngestion.FieldNames.ProductSize">
+            <summary>The product size.</summary>
+        </member>
+        <member name="T:ProductIngestion.InputData">
+            <summary>
+            The data read and parsed from the input.
+            </summary>
+        </member>
+        <member name="P:ProductIngestion.InputData.ValueNames">
+            <summary>
+            Gets the value names.
+            </summary>
+            <value>
+            The value names.
+            </value>
+        </member>
+        <member name="M:ProductIngestion.InputData.Get``1(System.String)">
+            <summary>
+            Gets the value of the field with specified name.
+            </summary>
+            <typeparam name="T">The type of the parsed field data.</typeparam>
+            <param name="name">The name of the field.</param>
+            <returns>The parsed field data.</returns>
+        </member>
+        <member name="M:ProductIngestion.InputData.GetValue``1(System.String)">
+            <summary>
+            Gets the raw value of the field with the specified name.
+            </summary>
+            <typeparam name="T">The type of the raw value.</typeparam>
+            <param name="name">The name of the field.</param>
+            <returns>The raw field data value.</returns>
+        </member>
+        <member name="M:ProductIngestion.InputData.Set(System.String,ProductIngestion.Types.IFieldType)">
+            <summary>
+            Sets the value of the field with the specified name.
+            </summary>
+            <param name="name">The name of the field.</param>
+            <param name="value">The value of the field.</param>
+        </member>
+        <member name="T:ProductIngestion.InputDataConverter">
+            <summary>Utility class to convert the input data to product records.</summary>
+        </member>
+        <member name="M:ProductIngestion.InputDataConverter.ConvertInputDataToProductRecord(ProductIngestion.InputData)">
+            <summary>Converts an input data to a product record.</summary>
+            <param name="inputData">The input data.</param>
+            <returns>A product record corresponding to the input data.</returns>
+        </member>
+        <member name="T:ProductIngestion.InputDataFormat">
+            <summary>The description of the input data format.</summary>
+        </member>
+        <member name="M:ProductIngestion.InputDataFormat.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:ProductIngestion.InputDataFormat" /> class using the default input data format.</summary>
+        </member>
+        <member name="M:ProductIngestion.InputDataFormat.#ctor(System.Collections.Generic.List{ProductIngestion.FieldDescription})">
+            <summary>Initializes a new instance of the <see cref="T:ProductIngestion.InputDataFormat" /> class using the specified field descriptions.</summary>
+            <param name="fieldDescriptions">The field descriptions.</param>
+        </member>
+        <member name="P:ProductIngestion.InputDataFormat.FieldDescriptions">
+            <summary>Gets the field descriptions.</summary>
+            <value>The field descriptions.</value>
+        </member>
+        <member name="M:ProductIngestion.InputDataFormat.CreateInputData">
+            <summary>Creates an input data object prepopulate with the fields from the input data.</summary>
+            <returns>An input data object.</returns>
+        </member>
+        <member name="T:ProductIngestion.ProductDataIngestor">
+            <summary>
+            Class to ingest the product data from a specified file or stream.
+            </summary>
+        </member>
+        <member name="M:ProductIngestion.ProductDataIngestor.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:ProductIngestion.ProductDataIngestor" /> class.</summary>
+        </member>
+        <member name="P:ProductIngestion.ProductDataIngestor.InputDataFormat">
+            <summary>Gets the input data format.</summary>
+            <value>The input data format.</value>
+        </member>
+        <member name="P:ProductIngestion.ProductDataIngestor.FieldProcessors">
+            <summary>
+            Gets the field processors.
+            </summary>
+            <value>
+            The field processors.
+            </value>
+        </member>
+        <member name="M:ProductIngestion.ProductDataIngestor.IngestProductData(System.String)">
+            <summary>
+            Ingests the product data from a file.
+            </summary>
+            <param name="path">The path to a file containing the product data.</param>
+            <returns>A list of product records for the product data.</returns>
+        </member>
+        <member name="M:ProductIngestion.ProductDataIngestor.IngestProductData(System.IO.Stream)">
+            <summary>
+            Ingests the product data from a stream.
+            </summary>
+            <param name="stream">The stream containing the product data.</param>
+            <returns>A list of product records for the product data.</returns>
+        </member>
+        <member name="T:ProductIngestion.ProductRecord">
+            <summary>
+            A product record.
+            </summary>
+        </member>
+        <member name="P:ProductIngestion.ProductRecord.ProductID">
+            <summary>Gets the product identifier.</summary>
+            <value>The product identifier.</value>
+        </member>
+        <member name="P:ProductIngestion.ProductRecord.ProductDescription">
+            <summary>
+            Gets the product description.
+            </summary>
+            <value>
+            The product description.
+            </value>
+        </member>
+        <member name="P:ProductIngestion.ProductRecord.RegularDisplayPrice">
+            <summary>
+            Gets the regular display price.
+            </summary>
+            <value>
+            The regular display price.
+            </value>
+        </member>
+        <member name="P:ProductIngestion.ProductRecord.RegularCalculatorPrice">
+            <summary>
+            Gets the regular calculator price.
+            </summary>
+            <value>
+            The regular calculator price.
+            </value>
+        </member>
+        <member name="P:ProductIngestion.ProductRecord.SaleDisplayPrice">
+            <summary>
+            Gets the sale display price.
+            </summary>
+            <value>
+            The sale display price.
+            </value>
+        </member>
+        <member name="P:ProductIngestion.ProductRecord.SaleCalculatorPrice">
+            <summary>
+            Gets the sale calculator price.
+            </summary>
+            <value>
+            The sale calculator price.
+            </value>
+        </member>
+        <member name="P:ProductIngestion.ProductRecord.UnitOfMeasure">
+            <summary>
+            Gets the unit of measure.
+            </summary>
+            <value>
+            The unit of measure.
+            </value>
+        </member>
+        <member name="P:ProductIngestion.ProductRecord.ProductSize">
+            <summary>
+            Gets the size of the product.
+            </summary>
+            <value>
+            The size of the product.
+            </value>
+        </member>
+        <member name="P:ProductIngestion.ProductRecord.TaxRate">
+            <summary>
+            Gets the tax rate.
+            </summary>
+            <value>
+            The tax rate.
+            </value>
+        </member>
+    </members>
+</doc>

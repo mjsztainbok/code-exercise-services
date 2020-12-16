@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProductIngestionTypes</name>
+    </assembly>
+    <members>
+        <member name="T:ProductIngestion.Types.Currency">
+            <summary>A type which represents currency.</summary>
+        </member>
+        <member name="M:ProductIngestion.Types.Currency.#ctor(System.Decimal)">
+            <summary>Initializes a new instance of the <see cref="T:ProductIngestion.Types.Currency" /> class.</summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="P:ProductIngestion.Types.Currency.Value">
+            <summary>Gets the value.</summary>
+            <value>The value.</value>
+        </member>
+        <member name="M:ProductIngestion.Types.Currency.op_Implicit(ProductIngestion.Types.Currency)~System.Decimal">
+            <summary>Performs an implicit conversion from <see cref="T:ProductIngestion.Types.Currency" /> to <see cref="T:System.Decimal" />.</summary>
+            <param name="currency">The currency.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
+        <member name="M:ProductIngestion.Types.Currency.op_Division(ProductIngestion.Types.Currency,ProductIngestion.Types.Number)">
+            <summary>Implements the operator /.</summary>
+            <param name="currency">The currency.</param>
+            <param name="divisor">The divisor.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:ProductIngestion.Types.Currency.op_Division(ProductIngestion.Types.Currency,System.Int32)">
+            <summary>Implements the operator /.</summary>
+            <param name="currency">The currency.</param>
+            <param name="divisor">The divisor.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:ProductIngestion.Types.Currency.Divide(ProductIngestion.Types.Number)">
+            <summary>Divides the currency by the specified divisor.</summary>
+            <param name="divisor">The divisor.</param>
+            <returns>The result of the division.</returns>
+        </member>
+        <member name="M:ProductIngestion.Types.Currency.Divide(System.Int32)">
+            <summary>Divides the currency by the specified divisor.</summary>
+            <param name="divisor">The divisor.</param>
+            <returns>The result of the division.</returns>
+        </member>
+        <member name="T:ProductIngestion.Types.CurrencyUtils">
+            <summary>Currency utility methods.</summary>
+        </member>
+        <member name="M:ProductIngestion.Types.CurrencyUtils.RoundHalfDownTo4Places(System.Decimal)">
+            <summary>Rounds a decimal value to 4 decimal places using round half down.</summary>
+            <param name="value">The value.</param>
+            <returns>The value rounded half down to 4 decimal places.</returns>
+        </member>
+        <member name="M:ProductIngestion.Types.CurrencyUtils.RoundHalfDown(System.Decimal,System.Int32)">
+            <summary>Rounds a decimal value to the specifed number of decimal places using round half down.</summary>
+            <param name="value">The value.</param>
+            <param name="decimalPlaces">The number of decimal places.</param>
+            <returns>The value rounded half down to the specified number of decimal places.</returns>
+        </member>
+        <member name="T:ProductIngestion.Types.Flag">
+            <summary>The supported flags.</summary>
+        </member>
+        <member name="F:ProductIngestion.Types.Flag.PerWeight">
+            <summary>The item is per weight</summary>
+        </member>
+        <member name="F:ProductIngestion.Types.Flag.Taxable">
+            <summary>The item is taxable</summary>
+        </member>
+        <member name="T:ProductIngestion.Types.Flags">
+            <summary> A type which represents flags.</summary>
+        </member>
+        <member name="F:ProductIngestion.Types.Flags.DefaultNumFlags">
+            <summary>The default number of flags.</summary>
+        </member>
+        <member name="M:ProductIngestion.Types.Flags.#ctor(System.Collections.Immutable.ImmutableArray{System.Boolean})">
+            <summary>Initializes a new instance of the <see cref="T:ProductIngestion.Types.Flags" /> class.</summary>
+            <param name="flags">The flags.</param>
+        </member>
+        <member name="P:ProductIngestion.Types.Flags.Value">
+            <summary>Gets the value.</summary>
+            <value>The value.</value>
+        </member>
+        <member name="P:ProductIngestion.Types.Flags.Item(System.Int32)">
+            <summary>Gets the flag at the specified index.</summary>
+            <param name="index">The index.</param>
+            <value>Indicates whether the flag is set or not.</value>
+            <returns>The flag value.</returns>
+        </member>
+        <member name="P:ProductIngestion.Types.Flags.Item(ProductIngestion.Types.Flag)">
+            <summary>Gets the flag for the specified flag value.</summary>
+            <param name="flag">The flag.</param>
+            <value>Indicates whether the flag is set or not.</value>
+            <returns>The flag value.</returns>
+        </member>
+        <member name="T:ProductIngestion.Types.IFieldType">
+            <summary>A field type marker interface.</summary>
+        </member>
+        <member name="T:ProductIngestion.Types.IFieldType`1">
+            <summary>A field type interface which can return a value.</summary>
+            <typeparam name="T">The type of the stored value.</typeparam>
+        </member>
+        <member name="P:ProductIngestion.Types.IFieldType`1.Value">
+            <summary>Gets the value.</summary>
+            <value>The value.</value>
+        </member>
+        <member name="T:ProductIngestion.Types.Number">
+            <summary>A type which represents a number.</summary>
+        </member>
+        <member name="M:ProductIngestion.Types.Number.#ctor(System.Int32)">
+            <summary>Initializes a new instance of the <see cref="T:ProductIngestion.Types.Number" /> class.</summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="P:ProductIngestion.Types.Number.Value">
+            <summary>Gets the value.</summary>
+            <value>The value.</value>
+        </member>
+        <member name="M:ProductIngestion.Types.Number.op_Implicit(ProductIngestion.Types.Number)~System.Int32">
+            <summary>Performs an implicit conversion from <see cref="T:ProductIngestion.Types.Number" /> to <see cref="T:System.Int32" />.</summary>
+            <param name="number">The number.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
+        <member name="T:ProductIngestion.Types.String">
+            <summary>A type which represents a string.</summary>
+        </member>
+        <member name="M:ProductIngestion.Types.String.#ctor(System.String)">
+            <summary>Initializes a new instance of the <see cref="T:ProductIngestion.Types.String" /> class.</summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="P:ProductIngestion.Types.String.Value">
+            <summary>Gets the value.</summary>
+            <value>The value.</value>
+        </member>
+        <member name="M:ProductIngestion.Types.String.op_Implicit(ProductIngestion.Types.String)~System.String">
+            <summary>Performs an implicit conversion from <see cref="T:ProductIngestion.Types.String" /> to <see cref="T:System.String" />.</summary>
+            <param name="str">The string.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
+    </members>
+</doc>

@@ -1,13 +1,17 @@
-﻿namespace ProductInformationIngestionTest
+﻿// <copyright file="Program.cs" company="Mark Sztainbok">
+// Copyright (c) Mark Sztainbok. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+// </copyright>
+
+namespace ProductInformationIngestionTest
 {
-    using System;
     using System.Collections.Generic;
 
     using ProductIngestion;
-    using ProductIngestion.Processors;
 
     using Spectre.Console;
 
+    /// <summary>The main program class.</summary>
     internal class Program
     {
         private static void Main(string[] args)
@@ -33,7 +37,6 @@
             {
                 path = args[0];
             }
-
 
             var pdi = new ProductDataIngestor();
             List<ProductRecord> productRecords = pdi.IngestProductData(path);
@@ -117,4 +120,3 @@
         private static string OutputNullableValue(object o) => (o != null) ? o.ToString() : string.Empty;
     }
 }
- 

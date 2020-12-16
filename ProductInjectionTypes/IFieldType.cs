@@ -12,7 +12,7 @@ namespace ProductIngestion.Types
 
     /// <summary>A field type interface which can return a value.</summary>
     /// <typeparam name="T">The type of the stored value.</typeparam>
-    public interface IFieldType<T> : IFieldType
+    public interface IFieldType<out T> : IFieldType
     {
         /// <summary>Gets the value.</summary>
         /// <value>The value.</value>

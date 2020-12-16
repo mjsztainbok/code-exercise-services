@@ -1,4 +1,4 @@
-# Swiftly Services Coding Exercise
+﻿# Swiftly Services Coding Exercise
 
 ## Overview
 
@@ -37,5 +37,86 @@ If you have any questions, don't hesitate to reach out to your Swiftly contact.
 
 ## Product Specification
 
-And without further ado, the product specification for the feature is [here](../master/ProductInformationIntegrationSpec.md).
+And without further ado, the product specification for the feature is [here](ProductInformationIntegrationSpec.md).
 
+## Build information ![Build status](https://ci.appveyor.com/api/projects/status/95td8dsivwr16kg9/branch/master?svg=true)
+
+*Appveyor CI build URL:* https://ci.appveyor.com/project/mjsztainbok/code-exercise-services
+
+*Releases on GitHub:* https://github.com/mjsztainbok/code-exercise-services/releases
+
+## Running the project
+### Prerequisites
+.NET Runtime 5.0 from https://dotnet.microsoft.com/download (although this application can run on Linux and MacOS the release only contains executables for Windows)
+
+### Installing the test program
+Download the latest releases from https://github.com/mjsztainbok/code-exercise-services/releases and unzip
+
+### Running the test program
+#### Usage
+```
+ProductInformationIngestionTest.exe [/r] <path to data file>
+```
+
+/r - displays the data in single record view instead of a table
+
+#### Sample output
+##### Table view
+```
+┌────────────┬────────────────────┬───────────────────┬───────────────────┬───────────────────┬───────────────────┬─────────────────┬──────────────┬──────────┐
+│ Product ID │ Product            │  Regular Display  │          Regular  │     Sale Display  │  Sale Calculator  │ Unit Of Measure │ Product Size │ Tax Rate │
+│            │ Description        │             Price │  Calculator Price │             Price │             Price │                 │              │          │
+├────────────┼────────────────────┼───────────────────┼───────────────────┼───────────────────┼───────────────────┼─────────────────┼──────────────┼──────────┤
+│   80000001 │ Kimchi-flavored    │             $5.67 │              5.67 │                   │                   │ Each            │ 18oz         │ 0%       │
+│            │ white rice         │                   │                   │                   │                   │                 │              │          │
+│   14963801 │ Generic Soda       │      2 for $13.00 │               6.5 │             $5.49 │              5.49 │ Each            │ 12x12oz      │ 7.775%   │
+│            │ 12-pack            │                   │                   │                   │                   │                 │              │          │
+│   40123401 │ Marlboro           │            $10.00 │                10 │             $5.49 │              5.49 │ Each            │              │ 0%       │
+│            │ Cigarettes         │                   │                   │                   │                   │                 │              │          │
+│   50133333 │ Fuji Apples        │             $3.49 │              3.49 │                   │                   │ Pound           │ lb           │ 0%       │
+│            │ (Organic)          │                   │                   │                   │                   │                 │              │          │
+└────────────┴────────────────────┴───────────────────┴───────────────────┴───────────────────┴───────────────────┴─────────────────┴──────────────┴──────────┘
+```
+
+##### Single record view
+```
+Product ID:                   80000001
+Product Description:          Kimchi-flavored white rice
+Regular Display Price:        $5.67
+Regular Calculator Price:     5.67
+Sale Display Price:
+Sale Calculator Price:
+Unit Of Measure:              Each
+Product Size:                 18oz
+Tax Rate:                     0%
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Product ID:                   14963801
+Product Description:          Generic Soda 12-pack
+Regular Display Price:        2 for $13.00
+Regular Calculator Price:     6.5
+Sale Display Price:           $5.49
+Sale Calculator Price:        5.49
+Unit Of Measure:              Each
+Product Size:                 12x12oz
+Tax Rate:                     7.775%
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Product ID:                   40123401
+Product Description:          Marlboro Cigarettes
+Regular Display Price:        $10.00
+Regular Calculator Price:     10
+Sale Display Price:           $5.49
+Sale Calculator Price:        5.49
+Unit Of Measure:              Each
+Product Size:
+Tax Rate:                     0%
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Product ID:                   50133333
+Product Description:          Fuji Apples (Organic)
+Regular Display Price:        $3.49
+Regular Calculator Price:     3.49
+Sale Display Price:
+Sale Calculator Price:
+Unit Of Measure:              Pound
+Product Size:                 lb
+Tax Rate:                     0%
+```
